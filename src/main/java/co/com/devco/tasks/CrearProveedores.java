@@ -22,6 +22,7 @@ public class CrearProveedores implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Click.on(NUEVO_PROVEEDOR),
                 Click.on(INGRESAR_NIT),
                 Enter.theValue(DIGITAR_NIT).into(INGRESAR_NIT),
                 Click.on(INGRESAR_NOMBRE_PROVEEDOR),

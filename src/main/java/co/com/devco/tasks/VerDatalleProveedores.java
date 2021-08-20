@@ -23,7 +23,6 @@ public class VerDatalleProveedores implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(VER_DETALLES_PROVEEDOR),
-                MoveMouse.to(CERRAR_DETALLES),
                 Click.on(CERRAR_DETALLES)
 
 

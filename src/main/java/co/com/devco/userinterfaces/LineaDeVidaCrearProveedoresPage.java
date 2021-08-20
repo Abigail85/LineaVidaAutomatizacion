@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class LineaDeVidaCrearProveedoresPage {
+	public static final Target NUEVO_PROVEEDOR= Target.the("le da click a la opcion Nueno Proveedor").located(By.xpath("//a[@id='nuevoproveedor']"));
 	public static final Target INGRESAR_NIT = Target.the("le da click a la opción del nit").located(By.xpath("//div[@id='crearModal']//input[@id='txtnit']"));
 	public static final String DIGITAR_NIT= "811031385" ;
 	public static final Target INGRESAR_NOMBRE_PROVEEDOR = Target.the("le da click a la opción nombre").located(By.xpath("//div[@id='crearModal']//input[@id='txtNombre']"));
