@@ -4,27 +4,25 @@ import co.com.devco.tasks.*;
 import io.cucumber.java.ast.Cuando;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static co.com.devco.userinterfaces.LineaDeVidaCrearEspecificacionesResultadosPage.RESULTADO_CREAR_ESPECIFICACIONES;
+import static co.com.devco.userinterfaces.LineaDeVidaEditarEspecificacionesResultadosPage.RESULTADO_EDITAR_ESPECIFICACIONES;
+import static co.com.devco.userinterfaces.LineaDeVidaEliminarEspecificacionesResultadosPage.RESULTADO_ELIMINAR_ESPECIFICACIONES;
 import static co.com.devco.userinterfaces.LineaDeVidaHomeResultadosPage.RESULTADOS_BUSQUEDA_HOME;
-import static co.com.devco.userinterfaces.LineaDeVidaProveedoresResultadosPage.RESULTADOS_BUSQUEDA_PROVEEDORES;
-import static co.com.devco.userinterfaces.LineaDeVidaCrearProveedoresResultadosPage.RESULTADO_CREAR_PROVEEDOR;
-import static co.com.devco.userinterfaces.LineaDeVidaEditarProveedoresResultadosPage.RESULTADO_EDITAR_PROVEEDOR;
-import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesProveedoresResultadosPage.RESULTADOS_VER_DETALLES;
-import static co.com.devco.userinterfaces.LineaDeVidaEliminarProveedoresResultadosPage.RESULTADO_ELIMINAR_PROVEEDOR;
-
+import static co.com.devco.userinterfaces.LineaDeVidaLotesResultadosPage.RESULTADOS_BUSQUEDA_LOTES;
+import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesEspecificacionesResultadosPage.RESULTADOS_VER_DETALLES;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class ProveedoresStepDefinitions {
+public class EspecificacionesLoteStepDefinitions {
 
 
     @Cuando("un usuario {string} crea {string} en linea-de-vida")
     public void unUsuarioCreaEnLineaDeVida(String actor, String string) {
         theActorCalled(actor).attemptsTo(
                 BuscarIngresarElLogin.laPalabra(),
-                IngresarProveedores.laPalabra(),
-                CrearProveedores.laPalabra()
+                IngresarLotes.laPalabra(),
+                CrearEspecificacionesLote.laPalabra()
 
         );
     }
@@ -33,8 +31,8 @@ public class ProveedoresStepDefinitions {
     public void debeVerComoResultadoMensaje(String mensaje) {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).hasSize(1),
-                Ensure.that(RESULTADO_CREAR_PROVEEDOR).containsElements(mensaje)
+                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).hasSize(1),
+                Ensure.that(RESULTADO_CREAR_ESPECIFICACIONES).containsElements(mensaje)
 
 
         );
@@ -44,8 +42,8 @@ public class ProveedoresStepDefinitions {
     public void unUsuarioEditaEnLineaDeVida(String actor, String string) {
         theActorCalled(actor).attemptsTo(
                 BuscarIngresarElLogin.laPalabra(),
-                IngresarProveedores.laPalabra(),
-                EditarProveedores.laPalabra()
+                IngresarLotes.laPalabra(),
+                EditarEspecificacionLote.laPalabra()
 
         );
     }
@@ -54,8 +52,8 @@ public class ProveedoresStepDefinitions {
     public void debeVerComoResultadoMensaje1(String mensaje1) {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).hasSize(1),
-                Ensure.that(RESULTADO_EDITAR_PROVEEDOR).containsElements(mensaje1)
+                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).hasSize(1),
+                Ensure.that(RESULTADO_EDITAR_ESPECIFICACIONES).containsElements(mensaje1)
 
 
         );
@@ -64,8 +62,8 @@ public class ProveedoresStepDefinitions {
     public void unUsuarioVeLosDetallesEnLineaDeVida(String actor, String string) {
         theActorCalled(actor).attemptsTo(
                 BuscarIngresarElLogin.laPalabra(),
-                IngresarProveedores.laPalabra(),
-                VerDatalleProveedores.laPalabra()
+                IngresarLotes.laPalabra(),
+                VerDetalleEspecificacionLote.laPalabra()
 
         );
     }
@@ -75,8 +73,8 @@ public class ProveedoresStepDefinitions {
     public void debeVerComoResultadoUna(String mensaje2) {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).hasSize(1),
-                Ensure.that(RESULTADOS_VER_DETALLES).containsElements(mensaje2)
+                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).hasSize(1),
+                Ensure.that(RESULTADOS_VER_DETALLES_ESPECIFICACIONES).containsElements(mensaje2)
 
 
         );
@@ -86,8 +84,8 @@ public class ProveedoresStepDefinitions {
     public void unUsuarioEliminaEnLineaDeVida(String actor, String string) {
         theActorCalled(actor).attemptsTo(
                 BuscarIngresarElLogin.laPalabra(),
-                IngresarProveedores.laPalabra(),
-                EliminarProveedores.laPalabra()
+                IngresarLotes.laPalabra(),
+                EliminarEspecificaciones.laPalabra()
         );
     }
 
@@ -95,8 +93,8 @@ public class ProveedoresStepDefinitions {
     public void debeVerComoResultadoMensaje3(String mensaje3) {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).hasSize(1),
-                Ensure.that(RESULTADO_ELIMINAR_PROVEEDOR).containsElements(mensaje3)
+                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).hasSize(1),
+                Ensure.that(RESULTADO_ELIMINAR_ESPECIFICACIONES).containsElements(mensaje3)
 
         );
     }

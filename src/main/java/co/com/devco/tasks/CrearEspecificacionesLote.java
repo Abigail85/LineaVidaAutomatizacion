@@ -9,22 +9,22 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static co.com.devco.userinterfaces.LineaDeVidaCrearProveedoresPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class CrearProveedores implements Task {
+public class CrearEspecificacionesLote implements Task {
 
 
-    public CrearProveedores( ) {  }
+    public CrearEspecificacionesLote( ) {  }
 
     public static Performable laPalabra() {
-        return instrumented(CrearProveedores.class);
+        return instrumented(CrearEspecificacionesLote.class);
     }
 
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(NUEVO_PROVEEDOR),
-                Click.on(INGRESAR_NIT),
-                Enter.theValue(DIGITAR_NIT).into(INGRESAR_NIT),
+                Click.on(NUEVA_ESPECIFICACION),
+                Click.on(INGRESAR_ID_ESPECIFICACION),
+                Enter.theValue(DIGITAR_ID_ESPECIFICACION).into(INGRESAR_ID_ESPECIFICACION),
                 Click.on(INGRESAR_NOMBRE_PROVEEDOR),
                 Enter.theValue(DIGITAR_NOMBRE_PROVEEDOR).into(INGRESAR_NOMBRE_PROVEEDOR),
                 Click.on(INGRESAR_DIRECCION),

@@ -25,8 +25,7 @@ public class IngresarProveedores implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(MENU_PROVEEDORES),
-                Click.on(SUB_MENU_GESTIONAR_PROVEEDORES),
-                Click.on(NUEVO_PROVEEDOR)
+                Click.on(SUB_MENU_GESTIONAR_PROVEEDORES)
 
 
 

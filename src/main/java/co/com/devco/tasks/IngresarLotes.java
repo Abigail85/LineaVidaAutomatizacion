@@ -4,26 +4,26 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.MoveMouse;
 
-import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesProveedoresPage.*;
+import static co.com.devco.userinterfaces.LineaDeVidaLotesPage.MENU_LOTES;
+import static co.com.devco.userinterfaces.LineaDeVidaLotesPage.SUB_MENU_GESTIONAR_ESPECIFICACIONES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class VerDatalleProveedores implements Task {
+public class IngresarLotes implements Task {
 
 
-    public VerDatalleProveedores( ) {  }
+    public IngresarLotes( ) {  }
 
     public static Performable laPalabra() {
-        return instrumented(VerDatalleProveedores.class);
+        return instrumented(IngresarLotes.class);
     }
 
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(VER_DETALLES_PROVEEDOR),
-                Click.on(CERRAR_DETALLES)
+                Click.on(MENU_LOTES),
+                Click.on(SUB_MENU_GESTIONAR_ESPECIFICACIONES)
 
 
 
