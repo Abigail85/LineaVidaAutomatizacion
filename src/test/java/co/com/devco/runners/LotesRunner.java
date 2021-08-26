@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-		features = "src/test/resources/features/especificaciones_lote.feature",
+		features = "src/test/resources/features/lote.feature",
 		glue = {"co.com.devco.stepdefinitions"},
 		snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class EspecificacionesLoteRunner {
+public class LotesRunner {
 
 }

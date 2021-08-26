@@ -9,13 +9,13 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static co.com.devco.userinterfaces.LineaDeVidaEditarProveedoresPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class EditarEspecificacionLote implements Task {
+public class EditarEspecificacion implements Task {
 
 
-    public EditarEspecificacionLote( ) {  }
+    public EditarEspecificacion( ) {  }
 
-    public static Performable laPalabra() {
-        return instrumented(EditarEspecificacionLote.class);
+    public static Performable delLote() {
+        return instrumented(EditarEspecificacion.class);
     }
 
 

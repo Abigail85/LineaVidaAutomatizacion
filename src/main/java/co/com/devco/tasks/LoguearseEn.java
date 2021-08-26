@@ -16,12 +16,12 @@ import static co.com.devco.userinterfaces.LineaDeVidaHomePage.DIGITAR_PASSWORD;
 import static co.com.devco.userinterfaces.LineaDeVidaHomePage.OPCION_INGRESAR;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class BuscarIngresarElLogin implements Task {
+public class LoguearseEn implements Task {
 
 
-    public BuscarIngresarElLogin() {  }
+    public LoguearseEn() {  }
 
-    public static Performable laPalabra() { return instrumented(BuscarIngresarElLogin.class); }
+    public static Performable laPagina() { return instrumented(LoguearseEn.class); }
 
 
     @Override
