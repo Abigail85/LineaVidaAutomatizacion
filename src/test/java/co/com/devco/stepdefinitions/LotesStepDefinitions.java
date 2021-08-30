@@ -6,8 +6,7 @@ import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
 
-import static co.com.devco.userinterfaces.LineaDeVidaCrearEspecificacionResultadosPage.RESULTADO_CREAR_ESPECIFICACION;
-import static co.com.devco.userinterfaces.LineaDeVidaEliminarEspecificacionesLoteResultadosPage.RESULTADO_ELIMINAR_ESPECIFICACION;
+import static co.com.devco.userinterfaces.LineaDeVidaEspecificacionResultadosPage.RESULTADOS_ESPECIFICACION;
 import static co.com.devco.userinterfaces.LineaDeVidaHomeResultadosPage.RESULTADOS_BUSQUEDA_HOME;
 import static co.com.devco.userinterfaces.LineaDeVidaLotesResultadosPage.RESULTADOS_BUSQUEDA_LOTES;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -16,7 +15,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class LotesStepDefinitions {
 
 
-    @Cuando("un usuario {string} crea  una especificacion de un lote en linea-de-vida")
+    @Cuando("un usuario {string} crea una especificacion de un lote en linea-de-vida")
     public void unUsuarioCreaUnaEspecificacionDeUnLoteEnLineaDeVida(String actor) {
         theActorCalled(actor).attemptsTo(
                 LoguearseEn.laPagina(),
@@ -27,18 +26,61 @@ public class LotesStepDefinitions {
         );
     }
 
-    @Entonces("debe ver como resultado un mensaje Especificación creada {string}")
-    public void debeVerComoResultadoUnMensajeEspecificacionCreada(String mensaje) {
+    @Entonces("debe ver como resultado4 un mensaje4 dentro de {string}")
+    public void debeVerComoResultado4UnMensaje4DentroDe(String string) {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).hasSize(1),
-                Ensure.that(RESULTADO_CREAR_ESPECIFICACION).containsElements(mensaje)
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
+                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
+                Ensure.that(RESULTADOS_ESPECIFICACION).contains(string)
 
 
         );
     }
 
+    @Cuando("un usuario {string} edita las especificaciones de un lote en linea-de-vida")
+    public void unUsuarioEditaLasEspecificacionesDeUnLoteEnLineaDeVida(String actor) {
+        theActorCalled(actor).attemptsTo(
+                LoguearseEn.laPagina(),
+                NavegarPorElMenu.hacia("Lotes"),
+                NavegarPorElSubMenu.hacia("Gestionar Especificaciónes"),
+                EditarlasEspecificaciones.delLote()
 
+        );
+    }
+
+
+    @Entonces("debe ver como resultado5 un mensaje5 dentro de {string}")
+    public void debeVerComoResultado5UnMensaje5DentroDe(String string) {
+        theActorInTheSpotlight().attemptsTo(
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
+                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
+                Ensure.that(RESULTADOS_ESPECIFICACION).contains(string)
+
+
+        );
+    }
+
+    @Cuando("un usuario {string} ve los detalles de las especificaciones de un lote en linea-de-vida")
+    public void unUsuarioVeLosDetallesDeLasEspecificacionesDeUnLoteEnLineaDeVida(String actor) {
+        theActorCalled(actor).attemptsTo(
+                LoguearseEn.laPagina(),
+                NavegarPorElMenu.hacia("Lotes"),
+                NavegarPorElSubMenu.hacia("Gestionar Especificaciónes"),
+                VerEnElDetalleDeLasEspecificaciones.suInformacion()
+
+        );
+    }
+
+
+    @Entonces("debe ver como como resultado6 una pantalla1 con los datos de las especificaciones dentro de {string}")
+    public void debeVerComoComoResultado6UnaPantalla1ConLosDatosDeLasEspecificacionesDentroDe(String string) {
+        theActorInTheSpotlight().attemptsTo(
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
+                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
+                Ensure.that(RESULTADOS_ESPECIFICACION).contains(string)
+
+        );
+    }
 
     @Cuando("un usuario {string} elimina una especificacion en linea-de-vida")
     public void unUsuarioEliminaUnaEspecificacionEnLineaDeVida(String actor) {
@@ -50,13 +92,17 @@ public class LotesStepDefinitions {
         );
     }
 
-    @Entonces("debe ver como resultado un mensaje Especificacion eliminada {string}")
-    public void debeVerComoResultadoUnMensajeEspecificacionEliminada(String mensaje) {
+    @Entonces("debe ver como resultado7 un mensaje7 dentro de  {string}")
+    public void debeVerComoResultado7UnMensaje7DentroDe(String string) {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(mensaje),
-                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(mensaje),
-                Ensure.that(RESULTADO_ELIMINAR_ESPECIFICACION).containsElements(mensaje)
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
+                Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
+                Ensure.that(RESULTADOS_ESPECIFICACION).contains(string)
 
         );
     }
+
+
+
+
 }

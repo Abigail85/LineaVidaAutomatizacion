@@ -8,13 +8,13 @@ import net.serenitybdd.screenplay.actions.Click;
 import static co.com.devco.userinterfaces.LineaDeVidaEliminarProveedoresPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class EliminarProveedores implements Task {
+public class EliminarUnProveedor implements Task {
 
 
-    public EliminarProveedores( ) {  }
+    public EliminarUnProveedor( ) {  }
 
-    public static Performable laPalabra() {
-        return instrumented(EliminarProveedores.class);
+    public static Performable enLaPagina() {
+        return instrumented(EliminarUnProveedor.class);
     }
 
 

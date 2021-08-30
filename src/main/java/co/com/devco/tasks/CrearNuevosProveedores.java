@@ -9,13 +9,13 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static co.com.devco.userinterfaces.LineaDeVidaCrearProveedoresPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class CrearProveedores implements Task {
+public class CrearNuevosProveedores implements Task {
 
 
-    public CrearProveedores( ) {  }
+    public CrearNuevosProveedores( ) {  }
 
-    public static Performable laPalabra() {
-        return instrumented(CrearProveedores.class);
+    public static Performable enLaPagina() {
+        return instrumented(CrearNuevosProveedores.class);
     }
 
 

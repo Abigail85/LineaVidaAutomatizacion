@@ -6,12 +6,13 @@ import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
 
+
+import static co.com.devco.userinterfaces.LineaDeVidaAccionesProveedoresResultadosPage.RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES;
 import static co.com.devco.userinterfaces.LineaDeVidaHomeResultadosPage.RESULTADOS_BUSQUEDA_HOME;
 import static co.com.devco.userinterfaces.LineaDeVidaProveedoresResultadosPage.RESULTADOS_BUSQUEDA_PROVEEDORES;
-import static co.com.devco.userinterfaces.LineaDeVidaCrearProveedoresResultadosPage.RESULTADO_CREAR_PROVEEDOR;
-import static co.com.devco.userinterfaces.LineaDeVidaEditarProveedoresResultadosPage.RESULTADO_EDITAR_PROVEEDOR;
-import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesProveedoresResultadosPage.RESULTADOS_VER_DETALLES;
-import static co.com.devco.userinterfaces.LineaDeVidaEliminarProveedoresResultadosPage.RESULTADO_ELIMINAR_PROVEEDOR;
+
+
+
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -19,23 +20,23 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class ProveedoresStepDefinitions {
 
 
-    @Cuando("un usuario {string} crea  un  Proveedor en linea-de-vida")
+    @Cuando("un usuario {string} crea un Proveedor en linea-de-vida")
     public void unUsuarioCreaUnProveedorEnLineaDeVida(String actor) {
         theActorCalled(actor).attemptsTo(
                 LoguearseEn.laPagina(),
                 NavegarPorElMenu.hacia("Proveedores"),
                 NavegarPorElSubMenu.hacia("Gestionar Proveedores"),
-                CrearProveedores.laPalabra()
+                CrearNuevosProveedores.enLaPagina()
 
         );
     }
 
-    @Entonces("debe ver como resultado un mensaje {string}")
-    public void debeVerComoResultadoUnMensaje(String mensaje) {
+    @Entonces("debe ver como resultado un mensaje dentro de {string}")
+    public void debeVerComoResultadoUnMensajeDentroDe(String string) {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).hasSize(1),
-                Ensure.that(RESULTADO_CREAR_PROVEEDOR).containsElements(mensaje)
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
+                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES).contains(string)
 
 
         );
@@ -47,17 +48,17 @@ public class ProveedoresStepDefinitions {
                 LoguearseEn.laPagina(),
                 NavegarPorElMenu.hacia("Proveedores"),
                 NavegarPorElSubMenu.hacia("Gestionar Proveedores"),
-                EditarProveedores.laPalabra()
+                EditarElProveedor.enLaPagina()
 
         );
     }
 
-    @Entonces("debe ver como resultado un mensaje1 {string}")
-    public void debeVerComoResultadoUnMensaje1(String mensajeEsperado) {
+    @Entonces("debe ver como resultado1 un mensaje1 dentro de {string}")
+    public void debeVerComoResultado1UnMensaje1DentroDe(String string) {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).hasSize(1),
-                Ensure.that(RESULTADO_EDITAR_PROVEEDOR).containsElements(mensajeEsperado)
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
+                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES).contains(string)
 
 
         );
@@ -68,22 +69,23 @@ public class ProveedoresStepDefinitions {
                 LoguearseEn.laPagina(),
                 NavegarPorElMenu.hacia("Proveedores"),
                 NavegarPorElSubMenu.hacia("Gestionar Proveedores"),
-                VerDatalleProveedores.laPalabra()
+                VerEnElDetalleDeLosProveedores.suInformacion()
 
         );
     }
 
 
-    @Entonces("debe ver como resultado una Pantalla con {string}")
-    public void debeVerComoResultadoUnaPantallaCon(String string) {
+    @Entonces("debe ver como como resultado2 una pantalla con los datos del proveedor dentro de {string}")
+    public void debeVerComoComoResultado2UnaPantallaConLosDatosDelProveedorDentroDe(String string) {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).hasSize(1),
-                Ensure.that(RESULTADOS_VER_DETALLES).containsElements(string)
-
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
+                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES).contains(string)
 
         );
     }
+
+
 
     @Cuando("un usuario {string} elimina un  Proveedor en linea-de-vida")
     public void unUsuarioEliminaUnProveedorEnLineaDeVida(String actor) {
@@ -91,17 +93,19 @@ public class ProveedoresStepDefinitions {
                 LoguearseEn.laPagina(),
                 NavegarPorElMenu.hacia("Proveedores"),
                 NavegarPorElSubMenu.hacia("Gestionar Proveedores"),
-                EliminarProveedores.laPalabra()
+                EliminarUnProveedor.enLaPagina()
         );
     }
 
-    @Entonces("debe ver como resultado un mensaje2 {string}")
-    public void debeVerComoResultadoUnMensaje2(String mensaje2) {
+    @Entonces("debe ver como resultado3 un mensaje3 dentro de {string}")
+    public void debeVerComoResultado3UnMensaje3DentroDe(String string) {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(RESULTADOS_BUSQUEDA_HOME).hasSize(1),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).hasSize(1),
-                Ensure.that(RESULTADO_ELIMINAR_PROVEEDOR).containsElements(mensaje2)
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
+                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES).contains(string)
 
         );
     }
-}
+
+
+    }

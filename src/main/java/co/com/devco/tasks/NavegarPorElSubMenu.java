@@ -6,12 +6,12 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
 
-import static co.com.devco.userinterfaces.LineaDeVidaMenuPage.LBL_NAME_MENU;
+
 import static co.com.devco.userinterfaces.LineaDeVidaSubMenuPage.LBL_NAME_SUB_MENU;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class NavegarPorElSubMenu implements Task {
-    private String string;
+    final String string;
 
     public NavegarPorElSubMenu(String string) { this.string = string; }
 

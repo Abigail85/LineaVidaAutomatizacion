@@ -1,7 +1,6 @@
 package co.com.devco.userinterfaces;
 
-import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
+
 
 public class LineaDeVidaHomeResultadosPage {
     public static final String RESULTADOS_BUSQUEDA_HOME = "http://localhost:8888/proyecto-linea-de-vida/proyecto-linea-de-vida/public/login";

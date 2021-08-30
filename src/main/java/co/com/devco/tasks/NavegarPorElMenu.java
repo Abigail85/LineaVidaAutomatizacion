@@ -10,7 +10,7 @@ import static co.com.devco.userinterfaces.LineaDeVidaMenuPage.LBL_NAME_MENU;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class NavegarPorElMenu implements Task {
-    private String string;
+    final String string;
 
     public NavegarPorElMenu( String string) { this.string = string; }
 
