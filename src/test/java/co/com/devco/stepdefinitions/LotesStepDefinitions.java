@@ -6,7 +6,7 @@ import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
 
-import static co.com.devco.userinterfaces.LineaDeVidaEspecificacionResultadosPage.RESULTADOS_ESPECIFICACION;
+import static co.com.devco.userinterfaces.LineaDeVidaAccionesDeTodosLosMenusResultadosPage.RESULTADOS_DIFERENTES_ACCIONES;
 import static co.com.devco.userinterfaces.LineaDeVidaHomeResultadosPage.RESULTADOS_BUSQUEDA_HOME;
 import static co.com.devco.userinterfaces.LineaDeVidaLotesResultadosPage.RESULTADOS_BUSQUEDA_LOTES;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -31,7 +31,7 @@ public class LotesStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
-                Ensure.that(RESULTADOS_ESPECIFICACION).contains(string)
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
 
 
         );
@@ -54,7 +54,7 @@ public class LotesStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
-                Ensure.that(RESULTADOS_ESPECIFICACION).contains(string)
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
 
 
         );
@@ -77,7 +77,7 @@ public class LotesStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
-                Ensure.that(RESULTADOS_ESPECIFICACION).contains(string)
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
 
         );
     }
@@ -97,7 +97,7 @@ public class LotesStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
-                Ensure.that(RESULTADOS_ESPECIFICACION).contains(string)
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
 
         );
     }

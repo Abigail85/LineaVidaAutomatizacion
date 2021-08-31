@@ -12,7 +12,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 public class EditarElProveedor implements Task {
 
 
-    public EditarElProveedor( ) {  }
+    public EditarElProveedor( ) { }
 
     public static Performable enLaPagina() {
         return instrumented(EditarElProveedor.class);

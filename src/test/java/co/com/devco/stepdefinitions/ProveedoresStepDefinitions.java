@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 
 
 
-import static co.com.devco.userinterfaces.LineaDeVidaAccionesProveedoresResultadosPage.RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES;
+import static co.com.devco.userinterfaces.LineaDeVidaAccionesDeTodosLosMenusResultadosPage.RESULTADOS_DIFERENTES_ACCIONES;
 import static co.com.devco.userinterfaces.LineaDeVidaHomeResultadosPage.RESULTADOS_BUSQUEDA_HOME;
 import static co.com.devco.userinterfaces.LineaDeVidaProveedoresResultadosPage.RESULTADOS_BUSQUEDA_PROVEEDORES;
 
@@ -36,7 +36,7 @@ public class ProveedoresStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES).contains(string)
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
 
 
         );
@@ -58,7 +58,7 @@ public class ProveedoresStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES).contains(string)
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
 
 
         );
@@ -80,7 +80,7 @@ public class ProveedoresStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES).contains(string)
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
 
         );
     }
@@ -102,7 +102,7 @@ public class ProveedoresStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES_PROVEEDORES).contains(string)
+                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
 
         );
     }
