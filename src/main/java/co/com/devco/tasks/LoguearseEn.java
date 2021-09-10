@@ -5,15 +5,9 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Open;
+
 import static co.com.devco.userinterfaces.LineaDeVidaHomePage.*;
-import static co.com.devco.userinterfaces.LineaDeVidaHomePage.INGRESAR_LOGIN;
-import static co.com.devco.userinterfaces.LineaDeVidaHomePage.INGRESAR_CORREO;
-import static co.com.devco.userinterfaces.LineaDeVidaHomePage.DIGITAR_USUARIO;
-import static co.com.devco.userinterfaces.LineaDeVidaHomePage.INGRESAR_PASSWORD;
-import static co.com.devco.userinterfaces.LineaDeVidaHomePage.DIGITAR_PASSWORD;
-import static co.com.devco.userinterfaces.LineaDeVidaHomePage.OPCION_INGRESAR;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class LoguearseEn implements Task {
@@ -28,12 +22,10 @@ public class LoguearseEn implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Open.url(LINEA_VIDA_HOME_PAGE),
-                Click.on(INGRESAR_LOGIN),
-                MoveMouse.to(INGRESAR_CORREO),
-                Enter.theValue(DIGITAR_USUARIO).into(INGRESAR_CORREO),
-                MoveMouse.to(INGRESAR_PASSWORD),
-                Enter.theValue(DIGITAR_PASSWORD).into(INGRESAR_PASSWORD),
-                Click.on(OPCION_INGRESAR)
+                Click.on(A_INGRESAR_LOGIN),
+                Enter.theValue("Admin@lineadevida.com").into(INPUT_USUARIO),
+                Enter.theValue("123456").into(INPUT_PASSWORD),
+                Click.on(BUTTON_INGRESAR)
 
 
         );

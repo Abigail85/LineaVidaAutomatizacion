@@ -22,10 +22,9 @@ public class EditarElProveedor implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(EDITAR_PROVEEDOR),
-                Click.on(EDITAR_NOMBRE_ENCARGADA_PRODUCCION),
-                Enter.theValue(DIGITAR_NUEVO_NOMBRE_ENCARGADA_PRODUCCION).into(EDITAR_NOMBRE_ENCARGADA_PRODUCCION),
-                Click.on(ACTUALIZAR)
+                Click.on(A_EDITAR_PROVEEDOR),
+                Enter.theValue("Isabel").into(INPUT_NOMBRE_ENCARGADA_PRODUCCION),
+                Click.on(BUTTON_ACTUALIZAR)
 
 
 

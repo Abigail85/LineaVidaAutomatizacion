@@ -5,107 +5,94 @@ import io.cucumber.java.ast.Cuando;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
-
-
-import static co.com.devco.userinterfaces.LineaDeVidaAccionesDeTodosLosMenusResultadosPage.RESULTADOS_DIFERENTES_ACCIONES;
+import static co.com.devco.userinterfaces.LineaDeVidaAccionesDeTodosLosMenusResultadosPage.P_MENSAJE;
 import static co.com.devco.userinterfaces.LineaDeVidaHomeResultadosPage.RESULTADOS_BUSQUEDA_HOME;
 import static co.com.devco.userinterfaces.LineaDeVidaProveedoresResultadosPage.RESULTADOS_BUSQUEDA_PROVEEDORES;
-
-
-
-
+import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesResultadosPage.RESULTADO;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ProveedoresStepDefinitions {
 
 
-    @Cuando("un usuario {string} crea un Proveedor en linea-de-vida")
-    public void unUsuarioCreaUnProveedorEnLineaDeVida(String actor) {
-        theActorCalled(actor).attemptsTo(
+    @Cuando("se crea un proveedor")
+    public void seCreaUnProveedor() {
+        theActorCalled("admin").attemptsTo(
                 LoguearseEn.laPagina(),
-                NavegarPorElMenu.hacia("Proveedores"),
-                NavegarPorElSubMenu.hacia("Gestionar Proveedores"),
+                NavegarPorElMenu.hacia("Proveedores", "Gestionar Proveedores"),
                 CrearNuevosProveedores.enLaPagina()
 
         );
     }
 
-    @Entonces("debe ver como resultado un mensaje dentro de {string}")
-    public void debeVerComoResultadoUnMensajeDentroDe(String string) {
+    @Entonces("debe ver como resultado el mensaje {string}")
+    public void debeVerComoResultadoElMensaje(String string) {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
+                Ensure.that(P_MENSAJE).hasValue("Provedor creado exitosamente.")
 
 
         );
     }
 
-    @Cuando("un usuario {string} edita  un  Proveedor en linea-de-vida")
-    public void unUsuarioEditaUnProveedorEnLineaDeVida(String actor) {
-        theActorCalled(actor).attemptsTo(
+    @Cuando("se edita un proveedor")
+    public void seEditaUnProveedor() {
+        theActorCalled("admin").attemptsTo(
                 LoguearseEn.laPagina(),
-                NavegarPorElMenu.hacia("Proveedores"),
-                NavegarPorElSubMenu.hacia("Gestionar Proveedores"),
+                NavegarPorElMenu.hacia("Proveedores", "Gestionar Proveedores"),
                 EditarElProveedor.enLaPagina()
 
         );
     }
 
-    @Entonces("debe ver como resultado1 un mensaje1 dentro de {string}")
-    public void debeVerComoResultado1UnMensaje1DentroDe(String string) {
+    @Entonces("debe ver como resultado el anuncio {string}")
+    public void debeVerComoResultadoElAnuncio(String string) {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
-
-
+                Ensure.that(P_MENSAJE).hasValue("Proveedor editado exitosamente.")
         );
     }
-    @Cuando("un usuario {string} ve los detalles de un Proveedor en linea-de-vida")
-    public void unUsuarioVeLosDetallesDeUnProveedorEnLineaDeVida(String actor) {
-        theActorCalled(actor).attemptsTo(
+
+    @Cuando("se ven los detalles del Proveedor con ID {string}")
+    public void seVenLosDetallesDelProveedorConID(String string) {
+        theActorCalled("admin").attemptsTo(
                 LoguearseEn.laPagina(),
-                NavegarPorElMenu.hacia("Proveedores"),
-                NavegarPorElSubMenu.hacia("Gestionar Proveedores"),
-                VerEnElDetalleDeLosProveedores.suInformacion()
+                NavegarPorElMenu.hacia("Proveedores", "Gestionar Proveedores"),
+                VerEnElDetalleDeLosProveedores.suInformacion("12")
 
         );
     }
 
-
-    @Entonces("debe ver como como resultado2 una pantalla con los datos del proveedor dentro de {string}")
-    public void debeVerComoComoResultado2UnaPantallaConLosDatosDelProveedorDentroDe(String string) {
+    @Entonces("debe ver como como resultado los datos del proveedor")
+    public void debeVerComoComoResultadoLosDatosDelProveedor() {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
-                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
+                Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(),
+                Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(),
+                Ensure.that(RESULTADO).containsElements(toString())
 
         );
     }
 
-
-
-    @Cuando("un usuario {string} elimina un  Proveedor en linea-de-vida")
-    public void unUsuarioEliminaUnProveedorEnLineaDeVida(String actor) {
-        theActorCalled(actor).attemptsTo(
+    @Cuando("se elimina un proveedor con ID {string}")
+    public void seEliminaUnProveedor(String string) {
+        theActorCalled("admin").attemptsTo(
                 LoguearseEn.laPagina(),
-                NavegarPorElMenu.hacia("Proveedores"),
-                NavegarPorElSubMenu.hacia("Gestionar Proveedores"),
-                EliminarUnProveedor.enLaPagina()
+                NavegarPorElMenu.hacia("Proveedores", "Gestionar Proveedores"),
+                EliminarUnProveedor.enLaPagina("811031385")
         );
     }
 
-    @Entonces("debe ver como resultado3 un mensaje3 dentro de {string}")
-    public void debeVerComoResultado3UnMensaje3DentroDe(String string) {
+    @Entonces("debe ver como resultado el aviso {string}")
+    public void debeVerComoResultadoElAviso(String string) {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_PROVEEDORES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
+                Ensure.that(P_MENSAJE).hasValue("Proveedor eliminado exitosamente.")
 
         );
     }
 
 
-    }
+}

@@ -22,9 +22,9 @@ public class EditarlasEspecificaciones implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(EDITAR_ESPECIFICACION),
-                Click.on(TALLA_A_MODIFICAR),
-                Enter.theValue(DIGITAR_NUEVA_CANTIDAD).into(TALLA_A_MODIFICAR),
+                Click.on(A_EDITAR_ESPECIFICACION),
+                Click.on(INPUT_MODIFICAR_TALLA),
+                Enter.theValue("15").into(INPUT_MODIFICAR_TALLA),
                 Click.on(GUARDAR)
 
 

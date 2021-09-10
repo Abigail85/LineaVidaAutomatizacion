@@ -5,27 +5,24 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.MoveMouse;
 
-
-import java.time.Duration;
 
 import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesProveedoresPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class VerEnElDetalleDeLosProveedores implements Task {
+final String string;
 
+    public VerEnElDetalleDeLosProveedores(String string ) {this.string=string;  }
 
-    public VerEnElDetalleDeLosProveedores( ) {  }
-
-    public static Performable suInformacion() {return instrumented(VerEnElDetalleDeLosProveedores.class); }
+    public static Performable suInformacion(String string) {return instrumented(VerEnElDetalleDeLosProveedores.class,string); }
 
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(VER_DETALLES_PROVEEDOR),
-                MoveMouse.to(RESULTADO.waitingForNoMoreThan(Duration.ofSeconds(30)))
+                Click.on(A_VER_DETALLES_PROVEEDOR.of(string))
+
 
 
 

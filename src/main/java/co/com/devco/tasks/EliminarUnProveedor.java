@@ -9,20 +9,21 @@ import static co.com.devco.userinterfaces.LineaDeVidaEliminarProveedoresPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class EliminarUnProveedor implements Task {
+final String string;
 
+    public EliminarUnProveedor( String string)
+    { this.string=string; }
 
-    public EliminarUnProveedor( ) {  }
-
-    public static Performable enLaPagina() {
-        return instrumented(EliminarUnProveedor.class);
+    public static Performable enLaPagina(String string) {
+        return instrumented(EliminarUnProveedor.class,string);
     }
 
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(ELIMINAR_PROVEEDOR),
-                Click.on(CONFIRMAR)
+                Click.on(A_ELIMINAR_PROVEEDOR.of(string)),
+                Click.on(BUTTON_CONFIRMAR)
 
 
 

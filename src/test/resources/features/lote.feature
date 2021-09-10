@@ -6,18 +6,17 @@ Característica: proyecto-linea-de-vida
 
 
   Escenario: crear  Especificacion
-    Cuando un usuario "logueado" crea una especificacion de un lote en linea-de-vida
-    Entonces debe ver como resultado4 un mensaje4 dentro de "http://localhost:8888/proyecto-linea-de-vida/proyecto-linea-de-vida/public/"
+    Cuando se crea una especificacion
+    Entonces debe ver como resultado el mensaje "Especificacion creada exitosamente"
 
   Escenario: Editar  Especificaciones
-    Cuando un usuario "logueado" edita las especificaciones de un lote en linea-de-vida
-    Entonces debe ver como resultado5 un mensaje5 dentro de "http://localhost:8888/proyecto-linea-de-vida/proyecto-linea-de-vida/public/"
+    Cuando se editan las especificaciones
+    Entonces debe ver como resultado el anuncio "Especificacion actualizado exitosamente"
 
   Escenario: Ver los Detalles de las Especificaciones
-    Cuando un usuario "logueado" ve los detalles de las especificaciones de un lote en linea-de-vida
-    Entonces debe ver como como resultado6 una pantalla1 con los datos de las especificaciones dentro de "http://localhost:8888/proyecto-linea-de-vida/proyecto-linea-de-vida/public/"
-
+    Cuando se ven los detalles de las especificaciones con ID "1"
+    Entonces debe ver como como resultado los datos de la Especificacion lote
 
   Escenario: Eliminar  Especificacion
-    Cuando un usuario "logueado" elimina una especificacion en linea-de-vida
-    Entonces debe ver como resultado7 un mensaje7 dentro de  "http://localhost:8888/proyecto-linea-de-vida/proyecto-linea-de-vida/public/"
+    Cuando se elimina una especificacion
+    Entonces debe ver como resultado el aviso "especificacion eliminada exitosamente"

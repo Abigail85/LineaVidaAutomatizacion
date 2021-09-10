@@ -22,8 +22,8 @@ public class EliminarUnaEspecificacion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(ELIMINAR_ESPECIFICACION),
-                Click.on(CONFIRMAR)
+                Click.on(A_ELIMINAR_ESPECIFICACION),
+                Click.on(BUTTON_CONFIRMAR_ELIMINAR)
 
 
 

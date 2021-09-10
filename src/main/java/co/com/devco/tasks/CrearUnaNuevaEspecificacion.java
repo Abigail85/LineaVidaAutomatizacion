@@ -22,15 +22,13 @@ public class CrearUnaNuevaEspecificacion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(NUEVA_ESPECIFICACION),
-                Click.on(INGRESAR_ID_ESPECIFICACION),
-                Enter.theValue(DIGITAR_ID_ESPECIFICACION).into(INGRESAR_ID_ESPECIFICACION),
-                Click.on(INGRESAR_ID_LOTE),
-                Click.on(INGRESAR_COLOR),
-                Click.on(INGRESAR_CANTIDAD_TALLA_XS),
-                Enter.theValue(DIGITAR_CANTIDAD_TALLA_XS).into(INGRESAR_CANTIDAD_TALLA_XS),
-                Click.on(INGRESAR_CANTIDAD_TALLA_S),
-                Enter.theValue(DIGITAR_CANTIDAD_TALLA_S).into(INGRESAR_CANTIDAD_TALLA_S),
+                Click.on(A_NUEVA_ESPECIFICACION),
+                Enter.theValue("1").into(INPUT_ID_ESPECIFICACION),
+                Click.on(SELECT_ID_LOTE),
+                Click.on(SELECT_COLOR),
+                Enter.theValue("30").into(INPUT_CANTIDAD_TALLA_XXS),
+                Click.on(INPUT_CANTIDAD_TALLA_S),
+                Enter.theValue("12").into(INPUT_CANTIDAD_TALLA_S),
                 Click.on(GUARDAR)
 
 

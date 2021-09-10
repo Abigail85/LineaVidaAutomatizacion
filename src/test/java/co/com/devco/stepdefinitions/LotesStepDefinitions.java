@@ -6,7 +6,7 @@ import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
 
-import static co.com.devco.userinterfaces.LineaDeVidaAccionesDeTodosLosMenusResultadosPage.RESULTADOS_DIFERENTES_ACCIONES;
+import static co.com.devco.userinterfaces.LineaDeVidaAccionesDeTodosLosMenusResultadosPage.P_MENSAJE;
 import static co.com.devco.userinterfaces.LineaDeVidaHomeResultadosPage.RESULTADOS_BUSQUEDA_HOME;
 import static co.com.devco.userinterfaces.LineaDeVidaLotesResultadosPage.RESULTADOS_BUSQUEDA_LOTES;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -19,8 +19,7 @@ public class LotesStepDefinitions {
     public void unUsuarioCreaUnaEspecificacionDeUnLoteEnLineaDeVida(String actor) {
         theActorCalled(actor).attemptsTo(
                 LoguearseEn.laPagina(),
-                NavegarPorElMenu.hacia("Lotes"),
-                NavegarPorElSubMenu.hacia("Gestionar Especificaciónes"),
+                NavegarPorElMenu.hacia("Lotes","Gestionar Especificaciónes"),
                 CrearUnaNuevaEspecificacion.delLote()
 
         );
@@ -31,7 +30,7 @@ public class LotesStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
+                Ensure.that(P_MENSAJE).hasTextContent("1234")
 
 
         );
@@ -41,8 +40,7 @@ public class LotesStepDefinitions {
     public void unUsuarioEditaLasEspecificacionesDeUnLoteEnLineaDeVida(String actor) {
         theActorCalled(actor).attemptsTo(
                 LoguearseEn.laPagina(),
-                NavegarPorElMenu.hacia("Lotes"),
-                NavegarPorElSubMenu.hacia("Gestionar Especificaciónes"),
+                NavegarPorElMenu.hacia("Lotes","Gestionar Especificaciónes"),
                 EditarlasEspecificaciones.delLote()
 
         );
@@ -54,7 +52,7 @@ public class LotesStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
+                Ensure.that(P_MENSAJE).hasTextContent("qwe")
 
 
         );
@@ -64,8 +62,7 @@ public class LotesStepDefinitions {
     public void unUsuarioVeLosDetallesDeLasEspecificacionesDeUnLoteEnLineaDeVida(String actor) {
         theActorCalled(actor).attemptsTo(
                 LoguearseEn.laPagina(),
-                NavegarPorElMenu.hacia("Lotes"),
-                NavegarPorElSubMenu.hacia("Gestionar Especificaciónes"),
+                NavegarPorElMenu.hacia("Lotes","Gestionar Especificaciónes"),
                 VerEnElDetalleDeLasEspecificaciones.suInformacion()
 
         );
@@ -77,7 +74,7 @@ public class LotesStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
+                Ensure.that(P_MENSAJE).hasTextContent("qwe")
 
         );
     }
@@ -86,8 +83,7 @@ public class LotesStepDefinitions {
     public void unUsuarioEliminaUnaEspecificacionEnLineaDeVida(String actor) {
         theActorCalled(actor).attemptsTo(
                 LoguearseEn.laPagina(),
-                NavegarPorElMenu.hacia("Lotes"),
-                NavegarPorElSubMenu.hacia("Gestionar Especificaciónes"),
+                NavegarPorElMenu.hacia("Lotes","Gestionar Especificaciónes"),
                 EliminarUnaEspecificacion.delLote()
         );
     }
@@ -97,7 +93,7 @@ public class LotesStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(RESULTADOS_BUSQUEDA_HOME).contains(string),
                 Ensure.that(RESULTADOS_BUSQUEDA_LOTES).contains(string),
-                Ensure.that(RESULTADOS_DIFERENTES_ACCIONES).contains(string)
+                Ensure.that(P_MENSAJE).hasTextContent("wer")
 
         );
     }

@@ -9,8 +9,8 @@ import net.serenitybdd.screenplay.actions.MoveMouse;
 
 import java.time.Duration;
 
-import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesEspecificacionLotePage.RESULTADO_VER_DETALLES;
-import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesEspecificacionLotePage.VER_DETALLES_ESPECIFICACIONES;
+import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesEspecificacionLotePage.DIV_VER_DETALLES;
+import static co.com.devco.userinterfaces.LineaDeVidaVerDetallesEspecificacionLotePage.A_VER_DETALLES_ESPECIFICACIONES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class VerEnElDetalleDeLasEspecificaciones implements Task {
@@ -24,8 +24,8 @@ public class VerEnElDetalleDeLasEspecificaciones implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(VER_DETALLES_ESPECIFICACIONES),
-                MoveMouse.to(RESULTADO_VER_DETALLES.waitingForNoMoreThan(Duration.ofSeconds(30)))
+                Click.on(A_VER_DETALLES_ESPECIFICACIONES),
+                MoveMouse.to(DIV_VER_DETALLES.waitingForNoMoreThan(Duration.ofSeconds(30)))
 
 
 
