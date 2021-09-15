@@ -7,22 +7,26 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
 import static co.com.devco.userinterfaces.LineaDeVidaEditarProveedoresPage.*;
+import static co.com.devco.userinterfaces.LineaDeVidaEditarPage.A_EDITAR;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class EditarElProveedor implements Task {
+final String string;
 
+    public EditarElProveedor(String string ) {
+        this.string=string;
+    }
 
-    public EditarElProveedor( ) { }
+    public static Performable enLaPagina(String string) {
 
-    public static Performable enLaPagina() {
-        return instrumented(EditarElProveedor.class);
+        return instrumented(EditarElProveedor.class,string);
     }
 
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(A_EDITAR_PROVEEDOR),
+                Click.on(A_EDITAR.of(string)),
                 Enter.theValue("Isabel").into(INPUT_NOMBRE_ENCARGADA_PRODUCCION),
                 Click.on(BUTTON_ACTUALIZAR)
 

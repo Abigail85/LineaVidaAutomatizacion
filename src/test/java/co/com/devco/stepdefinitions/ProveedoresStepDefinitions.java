@@ -36,12 +36,12 @@ public class ProveedoresStepDefinitions {
         );
     }
 
-    @Cuando("se edita un proveedor")
-    public void seEditaUnProveedor() {
+    @Cuando("se edita el proveedor con nit {string}")
+    public void seEditaUnProveedor(String string) {
         theActorCalled("admin").attemptsTo(
                 LoguearseEn.laPagina(),
                 NavegarPorElMenu.hacia("Proveedores", "Gestionar Proveedores"),
-                EditarElProveedor.enLaPagina()
+                EditarElProveedor.enLaPagina("56778")
 
         );
     }
@@ -55,12 +55,12 @@ public class ProveedoresStepDefinitions {
         );
     }
 
-    @Cuando("se ven los detalles del Proveedor con ID {string}")
-    public void seVenLosDetallesDelProveedorConID(String string) {
+    @Cuando("se ven los detalles del Proveedor con nit {string}")
+    public void seVenLosDetallesDelProveedorConNit(String string) {
         theActorCalled("admin").attemptsTo(
                 LoguearseEn.laPagina(),
                 NavegarPorElMenu.hacia("Proveedores", "Gestionar Proveedores"),
-                VerEnElDetalleDeLosProveedores.suInformacion("12")
+                VerLosDetallesDe.laInformacionDe("12")
 
         );
     }
@@ -75,9 +75,9 @@ public class ProveedoresStepDefinitions {
         );
     }
 
-    @Cuando("se elimina un proveedor con ID {string}")
-    public void seEliminaUnProveedor(String string) {
-        theActorCalled("admin").attemptsTo(
+    @Cuando("se elimina un proveedor con nit {string}")
+    public void seEliminaUnProveedorConNit(String string) {
+      theActorCalled("admin").attemptsTo(
                 LoguearseEn.laPagina(),
                 NavegarPorElMenu.hacia("Proveedores", "Gestionar Proveedores"),
                 EliminarUnProveedor.enLaPagina("811031385")

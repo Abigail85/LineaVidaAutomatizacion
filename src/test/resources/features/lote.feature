@@ -7,16 +7,16 @@ Característica: proyecto-linea-de-vida
 
   Escenario: crear  Especificacion
     Cuando se crea una especificacion
-    Entonces debe ver como resultado el mensaje "Especificacion creada exitosamente"
+    Entonces debe ver como resultado la nota "Especificacion creada exitosamente"
 
   Escenario: Editar  Especificaciones
-    Cuando se editan las especificaciones
-    Entonces debe ver como resultado el anuncio "Especificacion actualizado exitosamente"
+    Cuando se editan las especificaciones con ID "6"
+    Entonces debe ver como resultado el recado "Especificacion actualizado exitosamente"
 
   Escenario: Ver los Detalles de las Especificaciones
-    Cuando se ven los detalles de las especificaciones con ID "1"
-    Entonces debe ver como como resultado los datos de la Especificacion lote
+    Cuando se ven los detalles de las especificaciones con ID "2"
+    Entonces debe ver como resultado los datos de la Especificacion
 
   Escenario: Eliminar  Especificacion
-    Cuando se elimina una especificacion
-    Entonces debe ver como resultado el aviso "especificacion eliminada exitosamente"
+    Cuando se elimina una especificacion con ID "1"
+    Entonces debe ver como resultado la comunicacion "especificacion eliminada exitosamente"
